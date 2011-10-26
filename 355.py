@@ -1,3 +1,4 @@
+#!/usr/bin/python
 val = 10
 
 allPrimes = []
@@ -26,8 +27,6 @@ prime2 = -1
 for x in allNumbers:
     val = 0
     for y in allPrimes:
-        if x == 8:
-            print "x: 8    y: " + str(y) + "    val: " + str(val)
         if x%y == 0:
             val += 1
             if val == 1:
@@ -42,16 +41,17 @@ for x in allNumbers:
                 usedPrimes.remove(prime1)
             else:
                 myNumers.remove(x)
-        else:
-            if prime1 in usedPrimes and prime2 in usedPrimes:
-                usedPrimes.remove(prime1)
-                usedPrimes.remove(prime2)
-            else:
-                myNumers.remove(x)
+       # else:
+       #     if prime1 in usedPrimes and prime2 in usedPrimes:
+       #         usedPrimes.remove(prime1)
+       #         usedPrimes.remove(prime2)
+       #     else:
+       #         myNumers.remove(x)
     else:
         myNumers.remove(x)
 
-print allPrimes
-print myNumers
+print "allPrimes: " + str(allPrimes)
+print "usedPrimes: " + str(usedPrimes)
+print "myNumbers: " + str(myNumers)
 answer = sum(myNumers) + 1
 print answer
