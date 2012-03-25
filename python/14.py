@@ -10,10 +10,13 @@ def chain(x):
 	else:
 		return 1 + chain(3*x+1)
 
+#Make it DP by storing results
 chain = memo(chain)
 
+#Initialize values
 maxChain = 0
 maxNumber = 0
+
 #go through all numbers under 1000000
 for i in range(2, 1000000):
 	tmp = chain(i)
@@ -21,4 +24,5 @@ for i in range(2, 1000000):
 		maxChain = tmp
 		maxNumber = i
 
+#print the max number
 print maxNumber
