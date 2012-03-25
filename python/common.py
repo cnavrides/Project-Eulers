@@ -15,7 +15,7 @@ def getPrimes(maxVal):
 	primes = [2,3]
 	nums = []
 	#Initialize list of values
-	for i in range((maxVal+1)/3):
+	for i in range((maxVal+1)):
 		if i % 2 == 0 or i % 3 == 0 or i  < 3:
 			nums.append(-1)
 		else:
@@ -32,7 +32,7 @@ def getPrimes(maxVal):
 			if isPrime == True:
 				primes.append(count)
 				tmp = count
-				while tmp < maxVal/3:
+				while tmp < maxVal:
 					nums[tmp] = -1
 					tmp += count
 		count += 1
