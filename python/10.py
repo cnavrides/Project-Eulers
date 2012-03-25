@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from primes import primes
+from common import * 
 
-print sum(primes().getPrimes(2000000))
+print sum(getPrimes(2000000))
 
