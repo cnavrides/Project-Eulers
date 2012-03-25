@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
-primes[2]
+from primes import primes
 
-for i in
+print sum(primes().getPrimes(2000000))
+
