@@ -24,4 +24,5 @@ while(true)
 	current += changeVal
 end
 
+#print result
 puts current
