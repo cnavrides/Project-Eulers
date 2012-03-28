@@ -38,3 +38,20 @@ def getPrimes(maxVal):
 		count += 1
 	return primes
 
+#Tree node to use when dealing with trees
+class treeNode:
+	# each node can start with a value and a parent (optional)
+	def __init__(self, value, parent = None):
+		self.value = value
+		self.left = None
+		self.right = None
+		self.parent = parent
+	#add a left node
+	def addLeftNode(self, left):
+		self.left = left
+	#add a right node
+	def addRightNode(self, right):
+		self.right = right
+	#add a parent node if it wasnt added in the constructor
+	def addParentNode(self, parent):
+		self.parent = parent
