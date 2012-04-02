@@ -1,23 +1,5 @@
 #!/usr/bin/python
-#get the factors of a number
-def factors(num):
-	#start list with 1
-	factors = [1]
-
-	#offset to add one to odd numbers
-	offset = 1
-	if num %2 == 0 and num != 4:
-		offset = 0
-	
-	#go through the first half of the list and add numbers
-	for i in range(2, num/2 + offset):
-		 if num % i == 0 and factors.count(i) == 0:
-			factors.append(i)
-			if i != num/i:
-				factors.append(num/i)
-	#return the list of factors
-	return factors
-
+from common import factors
 #set the total to 0
 total = 0
 #go through all numbers (1, 10000]
