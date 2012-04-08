@@ -38,7 +38,7 @@ def getPrimes(maxVal):
 		count += 1
 	return primes
 
-	#get the factors of a number
+#get the factors of a number
 def factors(num):
 	#start list with 1
 	factors = [1]
