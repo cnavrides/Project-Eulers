@@ -1,13 +1,15 @@
 #!/usr/bin/env python
 
 from common import getPrimes
-
+from time import time
 #get all primes below 1,000,000
 primes = getPrimes(1000000)
 
 
 maxCount = 0
 maxPrime = -1
+
+start = time()
 
 #prime to look at
 for p in primes:
@@ -37,7 +39,7 @@ for p in primes:
 		if total > p: 
 			#loop until either we have taken too many off or the total is 
 			#below the prime
-			while count > 0 and total > p:
+			while count > maxCount and total > p:
 				total -= primes[start]
 				start += 1
 				count -= 1
@@ -53,4 +55,4 @@ for p in primes:
 		maxPrime = p
 
 print maxPrime	
-			
+print time() - start	
