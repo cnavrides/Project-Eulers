@@ -1,13 +1,6 @@
 #!/usr/bin/env python
-#checks if the string passed in is pandigital (1-9)
-def isPandigital(num):
-	usedNumbers = [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-	for n in num:
-		if usedNumbers[int(n)] == 0:
-			usedNumbers[int(n)] = 1
-		else:
-			return False
-	return True
+#from common import isPandigital
+from common import *
 
 maxNum = 0
 #for all values
