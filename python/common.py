@@ -75,12 +75,15 @@ class treeNode:
 	def addParentNode(self, parent):
 		self.parent = parent
 
-#checks if the string passed in is pandigital (1-9)
-def isPandigital(num):
+#checks if the string passed in is pandigital (1-length)
+def isPandigital(num, length = 9):
 	usedNumbers = [ 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 	for n in num:
 		if usedNumbers[int(n)] == 0:
 			usedNumbers[int(n)] = 1
 		else:
+			return False
+	for i in range(1, length+1):
+		if usedNumbers[i] != 1:
 			return False
 	return True
