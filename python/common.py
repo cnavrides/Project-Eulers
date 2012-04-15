@@ -1,5 +1,6 @@
 #!/usr/bin/python
 from functools import wraps
+from math import sqrt
 #memory function that stores values in recursive function 
 def memo(func):
 	cache = {}
@@ -12,21 +13,22 @@ def memo(func):
 
 #gets the array of prime numbers  below the value
 def getPrimes(maxVal):
-	primes = [2,3,5]
-	nums = []
+	primes = []
+	nums = [True for i in range(maxVal)]
+	nums[0] = False
+	nums[1] = False
+	sqrtVal = int(sqrt(maxVal)) + 1
 	#Initialize list of values
-	for i in range(3, (maxVal+1)):
-		if i % 2 != 0 and i % 3 != 0 and i % 5 != 0:
-			nums.append(i)
+	for i in range(2, sqrtVal):
+		if nums[i]:
+			j = i + i
+			while j < maxVal:
+				nums[j] = False
+				j += i
 	#find the primes using the sieve of erodes
-	for j in nums:
-		isPrime = True
-		for p in primes:
-			if j % p == 0:
-				isPrime = False
-				break
-		if isPrime == True:
-			primes.append(j)
+	for i in range(maxVal):
+		if nums[i]:
+			primes.append(i)
 	return primes
 
 #get the factors of a number
