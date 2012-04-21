@@ -15,17 +15,25 @@ permCounts = {}
 #lowest number for that cube
 lowestPerm = {}
 
-#go through all numbers under 1 million
-for i in range(346, 1000000):
+#go from i until found
+i = 346
+maxNum = 999999999999999999
+
+#go through all numbers until found
+while i < maxNum:
 	#get the hash of that cube
 	val = getPermutations(i**3)
 
 	#if it exists add 1 to that count, otherwise add that hash
 	if permCounts.has_key(val):
 		permCounts[val] += 1
+		#if 5 matches found, then complete this many digits 
+		if permCounts[val] == 5:
+			maxNum = 10 ** len(str(i))
 	else:
 		permCounts[val] = 1
 		lowestPerm[val] = i**3
+	i += 1
 
 lowest = -1
 #go through the hash keys
